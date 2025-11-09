@@ -1,0 +1,158 @@
+/* ===== MYTHFORGE LANDING PAGE ===== */
+
+.landing {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+/* ===== Overlay for readability ===== */
+.landing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 0;
+}
+
+/* ===== HERO CONTENT ===== */
+.hero {
+  position: relative;
+  z-index: 1;
+  color: #f9e79f;
+  font-family: "Cinzel", serif;
+  animation: fadeIn 1.2s ease forwards;
+    margin-top: 18rem; /* pushes everything lower */
+  padding-bottom: 2rem; /* optional, adds some breathing space */
+
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  margin-bottom: 0.3rem;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #fff9d6;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== BUTTON CONTAINER ===== */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 4rem; /* pushes the buttons downward */
+}
+
+/* ===== BUTTONS ===== */
+
+.btn {
+  padding: 2.4rem 5rem;           /* same button size */
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 900;               /* even bolder */
+  font-size: 25 px;              /* 3x the previous 2.2rem text size */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: none;
+  font-family: "Cinzel", serif;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  transform-origin: top center;   /* ensures it expands downward */
+  min-width: 20rem;               /* both buttons same width */
+  min-height: 6rem;               /* ensures uniform height */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+
+     /* ensures growth extends downward only */
+
+
+
+.btn i {
+  font-size: 1.2rem;
+}
+
+/* ===== GOLD BUTTON ===== */
+.get-started {
+  background: linear-gradient(45deg, #ffd700, #d4af37);
+  color: #3a1a00;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.get-started:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+}
+
+/* ===== ORANGE BUTTON ===== */
+.explore {
+  background: linear-gradient(45deg, #ff9800, #b76e00);
+  color: #fff8e1;
+  box-shadow: 0 0 15px rgba(255, 152, 0, 0.4);
+}
+
+.explore:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 30px rgba(255, 152, 0, 0.8);
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    padding: 0.7rem 1.6rem;
+    font-size: 200 px;
+  }
+}
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; /* moves content toward bottom */
+  padding-bottom: 6rem; /* adjust distance from bottom */
+}
+
+.btn {
+    
+    font-size: 200 px;
+  }

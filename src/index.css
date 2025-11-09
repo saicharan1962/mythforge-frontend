@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Spectral:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Spectral', serif;
+  background: #f4e8d1;
+  color: #5d4037;
+  min-height: 100vh;
+}
+
+h1, h2, h3, button, .logo {
+  font-family: 'Cinzel', serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #3a2a1a;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  color: #d4af37;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #f4e8d1;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+}
+
+.logout-btn {
+  background: #d4af37;
+  color: #3a1a00;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: #3a2a1a;
+  color: #f4e8d1;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+.mythic-footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #2c1b0f;
+  color: #f4e8d1;
+  font-size: 0.9rem;
+  border-top: 2px solid var(--gold);
+}
+.auth-card {
+  background: rgba(244,232,209,0.97);
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 3px solid #d4af37;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.auth-card h2 {
+  color: #b8972e;
+  margin-bottom: 1.5rem;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.8rem 0;
+  border: 2px solid #d4af37;
+  border-radius: 50px;
+  font-size: 1rem;
+  background: #fffdf5;
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(45deg, #d4af37, #ffd700);
+  color: #3a1a00;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.auth-card button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #c62828;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.auth-card p {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.auth-card a {
+  color: #b8972e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* PUBLIC MYTH */
+.public-myth {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(244,232,209,0.97);
+  border-radius: 20px;
+  border: 3px solid #d4af37;
+  text-align: center;
+}
+
+.public-myth h1 {
+  color: #b8972e;
+  margin-bottom: 1rem;
+}
+
+.public-myth p {
+  margin: 1rem 0;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.public-myth button {
+  background: #d4af37;
+  color: #3a1a00;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  margin-top: 2rem;
+}

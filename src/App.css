@@ -1,0 +1,276 @@
+/* ==== MYTHIC THEME — CORRECTED & WORKING ==== */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Spectral:wght@400;600&display=swap');
+
+:root {
+  --gold: #d4af37;
+  --parchment: #f4e8d1;
+  --ink: #3a2a1a;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --dark: #2c1b0f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Spectral', serif;
+  color: var(--ink);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, button, .logo {
+  font-family: 'Cinzel', serif;
+}
+
+/* ==== NAVBAR ==== */
+.mythic-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: rgba(44, 27, 15, 0.95);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid var(--gold);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a,
+.nav-links button {
+  color: #f4e8d1;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links button:hover {
+  color: var(--gold);
+}
+
+.logout-btn {
+  background: transparent;
+  color: #ffd700;
+  border: 2px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: var(--gold);
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+
+/* ==== CARDS ==== */
+.parchment-card,
+.auth-card {
+  background: var(--parchment);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px var(--shadow);
+  max-width: 600px;
+  margin: 2rem auto;
+  border: 3px double var(--gold);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-card {
+  max-width: 400px;
+  margin: 10vh auto;
+  text-align: center;
+  padding: 2.5rem;
+  border: 4px solid var(--gold);
+}
+
+.parchment-card::before,
+.auth-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* ==== INPUTS ==== */
+input,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.8rem 0;
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  font-family: 'Spectral', serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #b8972e;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+  background: white;
+}
+
+/* ==== BUTTONS ==== */
+button,
+.forge-btn,
+.btn-primary,
+.btn-secondary {
+  background: linear-gradient(to bottom, var(--gold), #b8972e);
+  color: var(--ink);
+  border: none;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0,0 0, 0.2);
+}
+button:hover,
+.forge-btn:hover,
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 2px solid var(--gold);
+}
+
+.btn-secondary:hover {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+/* ==== LANDING PAGE ==== */
+.landing {
+  text-align: center;
+  padding: 4rem 2rem;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  color: var(--gold);
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+  margin-bottom: 1rem;
+  animation: glow 3s infinite alternate;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: var(--ink);
+  margin-bottom: 2.5rem;
+  font-style: italic;
+  max-width: 700px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==== MYTH CONTENT ==== */
+.god-tag {
+  color: var(--gold);
+  font-style: italic;
+  font-size: 1.3rem;
+  margin: 0.8rem 0;
+  font-weight: bold;
+}
+
+.narrative p {
+  font-family: 'Spectral', serif;
+  line-height: 1.9;
+  font-size: 1.15rem;
+  margin: 1.2rem 0;
+  text-align: justify;
+}
+
+/* ==== FOOTER ==== */
+.mythic-footer {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(44, 27, 15, 0.95);
+  color: #f4e8d1;
+  font-size: 0.9rem;
+  border-top: 2px solid var(--gold);
+  margin-top: auto;
+}
+
+/* ==== LOADING ==== */
+.loading {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.3rem;
+  color: var(--gold);
+  font-style: italic;
+}
+
+/* ==== ANIMATIONS ==== */
+@keyframes glow {
+  from { text-shadow: 0 0 10px rgba(212, 175, 55, 0.4); }
+  to { text-shadow: 0 0 20px rgba(212, 175, 55, 0.7); }
+}
+
+/* ==== SELECTION ==== */
+::selection {
+  background: var(--gold);
+  color: white;
+}
+
+/* ==== APP CONTAINER ==== */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
