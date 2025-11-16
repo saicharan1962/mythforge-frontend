@@ -1,0 +1,96 @@
+// src/pages/Auth.jsx
+import React, { useState } from "react";
+import api from "../api/api";
+import "./Auth.css";
+
+const AuthPage = () => {
+  const [isLogin, setIsLogin] = useState(true);
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      if (isLogin) {
+        // LOGIN
+        const res = await api.post("/auth/login", {
+          email: formData.email,
+          password: formData.password,
+        });
+        localStorage.setItem("token", res.data.token);
+        setMessage("✅ Login successful!");
+        window.location.href = "/dashboard"; // redirect after login
+      } else {
+        // REGISTER
+        await api.post("/auth/register", formData);
+        setMessage("🎉 Registration successful! You can now log in.");
+        setIsLogin(true);
+      }
+    } catch (err) {
+      console.error(err);
+      setMessage("❌ " + (err.response?.data?.message || "Server error"));
+    }
+  };
+
+  return (
+    <div className="auth-container">
+      <h1>{isLogin ? "Login" : "Sign Up"}</h1>
+
+      <form onSubmit={handleSubmit}>
+        {!isLogin && (
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            value={formData.username}
+            onChange={handleChange}
+            required
+          />
+        )}
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
+        <button type="submit">{isLogin ? "Login" : "Create Account"}</button>
+      </form>
+
+      <p className="switch-mode">
+        {isLogin ? (
+          <>
+            Not a member?{" "}
+            <span onClick={() => setIsLogin(false)}>Sign up</span>
+          </>
+        ) : (
+          <>
+            Already a member?{" "}
+            <span onClick={() => setIsLogin(true)}>Login</span>
+          </>
+        )}
+      </p>
+
+      {message && <p className="auth-message">{message}</p>}
+    </div>
+  );
+};
+
+export default AuthPage;

@@ -19,7 +19,7 @@ function Landing() {
         <div className="buttons">
           <button
             className="btn get-started"
-            onClick={() => navigate("/create")}
+            onClick={() => navigate("/auth")}
           >
             Begin Your Divine Journey
           </button>

@@ -178,14 +178,27 @@ function Chronicles() {
         <div className="deity-text">
            <h2>HEPHAESTUS</h2>
               <p>
-                Born of Zeus and the mortal Alcmene, Heracles carried both divine might and mortal sorrow. From birth, he was marked by Hera’s wrath, who sent serpents to kill him in his cradle. He crushed them with his infant hands, foreshadowing a life of endless struggle. Hera’s vengeance would later drive him to madness, causing him to slay his wife and children. In penance, he sought purification through twelve labors so immense they echoed through eternity. He battled the Nemean Lion, captured the golden Hind, cleansed the Augean Stables, and descended to Hades itself. Each task was more than conquest; it was transformation, forcing the brute within him to yield to endurance and wisdom.
+                Cast from Olympus for his imperfection, Hephaestus fell through the clouds into the sea, his body broken but his spirit unshaken. From his forge in volcanic depths, he shaped wonders the gods themselves could not match. His hammer struck rhythm into flame; his anvil sang with divine purpose. He forged Zeus’s thunderbolts, Achilles’ armor, and Aphrodite’s girdle — each creation born from the fire of endurance. Crippled yet indomitable, Hephaestus turned pain into art, transforming rejection into mastery. His forge became both sanctuary and soul, each spark a testament to resilience.
               </p>
-              <p>When his labors ended, Heracles found no peace in power but in redemption. His strength was divine, yet his suffering profoundly human — every scar an inscription of forgiveness earned, not given. Upon his death, Zeus carried him to Olympus, granting immortality. Yet even in glory, he remained the hero of mortals, symbol of triumph over pain. “Herculean” became the word for impossible effort — for in him, humanity saw that the true measure of strength is not domination but the courage to rebuild oneself after ruin.</p>
+              <p>Though mocked by gods, he found companionship in his craft, and in it, redemption. His love for Aphrodite was unreciprocated, yet even heartbreak became fuel for beauty. Hephaestus taught mortals that perfection is not the absence of flaw but the triumph over it — that creation is an act of defiance against despair. The fire that scarred him also illuminated his genius. In every artist’s struggle, every builder’s perseverance, his flame still burns. Through the sound of hammer upon steel, Hephaestus whispers: from brokenness comes brilliance, and from struggle, form eternal.</p>
+
+       </div>
+      </div>
+
+      {/* === HERCULES  === */}
+      <div className="deity-section">
+       <img src={Hercules} alt="Hercules" width="200" className="deity-img" />
+        <div className="deity-text">
+           <h2>HERCULES</h2>
+              <p>
+                Born of Zeus and the mortal Alcmene, Hercules carried both divine might and mortal sorrow. From birth, he was marked by Hera’s wrath, who sent serpents to kill him in his cradle. He crushed them with his infant hands, foreshadowing a life of endless struggle. Hera’s vengeance would later drive him to madness, causing him to slay his wife and children. In penance, he sought purification through twelve labors so immense they echoed through eternity. He battled the Nemean Lion, captured the golden Hind, cleansed the Augean Stables, and descended to Hades itself. Each task was more than conquest; it was transformation, forcing the brute within him to yield to endurance and wisdom.
+              </p>
+              <p>When his labors ended, Hercules found no peace in power but in redemption. His strength was divine, yet his suffering profoundly human — every scar an inscription of forgiveness earned, not given. Upon his death, Zeus carried him to Olympus, granting immortality. Yet even in glory, he remained the hero of mortals, symbol of triumph over pain. “Herculean” became the word for impossible effort — for in him, humanity saw that the true measure of strength is not domination but the courage to rebuild oneself after ruin.</p>
        </div>
       </div>
 
 
-     {/* === HEPHAESTUS  === */}
+     {/* === PERSEUS  === */}
       <div className="deity-section">
        <img src={Perseus} alt="Perseus" width="200" className="deity-img" />
         <div className="deity-text">
@@ -286,79 +299,7 @@ function Chronicles() {
             </div>
       </div>
 
-
-
-
-
-         
-         
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
+   
 
  
         <button id="backToTop">↑ Back to Top</button>
