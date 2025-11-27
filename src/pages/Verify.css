@@ -1,0 +1,47 @@
+/* Verify.css - MythForge Style */
+
+.verify-container {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1a1625, #0d0b14);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-family: "Cinzel", serif;
+  color: #fff8d6;
+}
+
+.verify-card {
+  background: rgba(30, 20, 45, 0.85);
+  border: 2px solid #ffd700;
+  padding: 40px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 0 22px rgba(255, 215, 0, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.verify-card h1 {
+  font-size: 2rem;
+  color: #ffd700;
+  text-shadow: 0 0 14px rgba(255, 215, 0, 0.7);
+  margin-bottom: 1rem;
+}
+
+.verify-card p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.verify-card a {
+  color: #ffd700;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.1rem;
+}
+
+.verify-card a:hover {
+  opacity: 0.8;
+}

@@ -1,0 +1,51 @@
+/* AdminDashboard.css*/
+
+
+.admin-container {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #2e2b40, #120f1f);
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+  font-family: "Cinzel", serif;
+  color: #fff8cc;
+}
+
+.admin-card {
+  background: rgba(30, 20, 45, 0.9);
+  border: 2px solid #ffd700;
+  border-radius: 16px;
+  padding: 40px;
+  width: 90%;
+  max-width: 900px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  text-align: center;
+}
+
+.admin-card h1 {
+  color: #ffd700;
+  margin-bottom: 10px;
+  text-shadow: 0 0 12px #ffda6b;
+}
+
+.admin-table {
+  width: 100%;
+  margin-top: 25px;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  border: 1px solid #ffd700;
+  padding: 10px 15px;
+}
+
+.admin-table th {
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+}
+
+.admin-table tr:hover {
+  background: rgba(255, 215, 0, 0.1);
+}

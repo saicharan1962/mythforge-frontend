@@ -1,3 +1,5 @@
+// landing.jsx
+
 import React from "react";
 import "./Landing.css";
 import { useNavigate } from "react-router-dom";
@@ -17,6 +19,8 @@ function Landing() {
     >
       <div className="hero">
         <div className="buttons">
+
+          {/* FIX APPLIED HERE — this now goes to /auth */}
           <button
             className="btn get-started"
             onClick={() => navigate("/auth")}

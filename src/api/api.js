@@ -1,3 +1,5 @@
+/* api.js*/
+
 import axios from "axios";
 
 const api = axios.create({
@@ -17,7 +19,7 @@ api.interceptors.response.use(
   (err) => {
     if (err.response?.status === 401) {
       localStorage.removeItem("token");
-      window.location.href = "/auth";
+      window.location.href = "/auth";   // FIX HERE
     }
     return Promise.reject(err);
   }

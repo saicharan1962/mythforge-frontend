@@ -1,4 +1,4 @@
-/* ===== MYTHFORGE LANDING PAGE ===== */
+/* ===== MYTHFORGE LANDING PAGE CSS ===== */
 
 .landing {
   height: 100vh;
@@ -13,8 +13,6 @@
   position: relative;
   overflow: hidden;
 }
-
-
 
 /* ===== Overlay for readability ===== */
 .landing::before {
@@ -32,9 +30,8 @@
   color: #f9e79f;
   font-family: "Cinzel", serif;
   animation: fadeIn 1.2s ease forwards;
-    margin-top: 18rem; /* pushes everything lower */
-  padding-bottom: 2rem; /* optional, adds some breathing space */
-
+  margin-top: 18rem;
+  padding-bottom: 2rem;
 }
 
 .hero h1 {
@@ -59,17 +56,17 @@
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-  margin-top: 4rem; /* pushes the buttons downward */
+  margin-top: 4rem;
 }
 
 /* ===== BUTTONS ===== */
 
 .btn {
-  padding: 2.4rem 5rem;           /* same button size */
+  padding: 2.4rem 5rem;
   border-radius: 50px;
   text-decoration: none;
-  font-weight: 900;               /* even bolder */
-  font-size: 25 px;              /* 3x the previous 2.2rem text size */
+  font-weight: 900;
+  font-size: 25 px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -78,16 +75,11 @@
   font-family: "Cinzel", serif;
   transition: all 0.3s ease;
   cursor: pointer;
-  transform-origin: top center;   /* ensures it expands downward */
-  min-width: 20rem;               /* both buttons same width */
-  min-height: 6rem;               /* ensures uniform height */
+  transform-origin: top center;
+  min-width: 20rem;
+  min-height: 6rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
-
-
-     /* ensures growth extends downward only */
-
-
 
 .btn i {
   font-size: 1.2rem;
@@ -144,15 +136,15 @@
     font-size: 200 px;
   }
 }
+
 .landing {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end; /* moves content toward bottom */
-  padding-bottom: 6rem; /* adjust distance from bottom */
+  justify-content: flex-end;
+  padding-bottom: 6rem;
 }
 
 .btn {
-    
-    font-size: 200 px;
-  }
+  font-size: 200 px;
+}
