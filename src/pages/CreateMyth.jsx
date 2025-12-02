@@ -1,23 +1,31 @@
+// src/pages/CreateMyth.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/api";
 
-const gods = ["Zeus", "Athena", "Apollo", "Aphrodite", "Poseidon", "Hera", "Hades", "Persephone"];
-
 const CreateMyth = () => {
   const [event, setEvent] = useState("");
-  const [god, setGod] = useState(gods[0]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!event.trim()) return alert("Please describe your life event.");
+
     setLoading(true);
     try {
-      const res = await api.post("/myths/create", { event, god });
-      navigate(`/myth/${res.data.myth_id}`);
+      // 🔹 Backend will determine god & narrative automatically (no manual input)
+      const res = await api.post("/myths", { event });
+
+      // Navigate to newly created myth (optional)
+      if (res.data?.myth?.myth_id) {
+        navigate(`/myth/${res.data.myth.myth_id}`);
+      } else {
+        alert("Myth created successfully!");
+      }
     } catch (err) {
-      alert("Failed to create myth");
+      console.error("Myth creation failed:", err);
+      alert("Failed to create myth. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -34,11 +42,8 @@ const CreateMyth = () => {
             onChange={(e) => setEvent(e.target.value)}
             required
           />
-          <select value={god} onChange={(e) => setGod(e.target.value)}>
-            {gods.map(g => <option key={g} value={g}>{g}</option>)}
-          </select>
           <button type="submit" disabled={loading}>
-            {loading ? "Invoking..." : "Generate My Myth"}
+            {loading ? "Forging your myth..." : "Generate Myth Narrative"}
           </button>
         </form>
       </div>
