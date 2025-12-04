@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap');
+
+/* === Full Layout === */
+.myths-fullscreen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #2c2943 0%, #3a3356 35%, #201b33 100%);
+  font-family: "Cinzel", serif;
+  color: #fdf8e6;
+  overflow-x: hidden;
+}
+
+/* === Navbar === */
+.dashboard-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 48px;
+  background: linear-gradient(90deg, rgba(45, 35, 70, 0.95), rgba(60, 50, 85, 0.9));
+  border-bottom: 2px solid #ffd700;
+  box-shadow: 0 3px 25px rgba(255, 215, 0, 0.15);
+}
+
+.navbar-title {
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #ffd700, #fff2a8, #ffd700);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowMove 6s linear infinite;
+  text-shadow: 0 0 15px rgba(255, 240, 150, 0.4);
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.6rem 1.4rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn.back {
+  background: linear-gradient(135deg, #ffd700, #ffbf00);
+  color: #000;
+}
+.btn.back:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+.btn.logout {
+  background: linear-gradient(145deg, #a62121, #6e1010);
+  color: #fff;
+  border: 2px solid #ffb6b6;
+}
+.btn.logout:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 18px rgba(255, 0, 0, 0.5);
+}
+
+/* === Loader === */
+.myths-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.4rem;
+  color: #ffd700;
+}
+
+/* === Container === */
+.myths-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 30px;
+}
+
+.empty-msg {
+  color: #fdd75a;
+  font-size: 1.1rem;
+}
+
+/* === Myth Grid === */
+.myths-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0;
+}
+
+.myth-card {
+  background: rgba(255, 245, 200, 0.1);
+  border: 2px solid #ffd700;
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.15);
+}
+.myth-card:hover {
+  transform: scale(1.05);
+  background: rgba(255, 248, 210, 0.15);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+}
+.myth-card h2 {
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+}
+.myth-card p {
+  color: #f3e2b6;
+  font-size: 0.9rem;
+}
+
+/* === Animation === */
+@keyframes glowMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

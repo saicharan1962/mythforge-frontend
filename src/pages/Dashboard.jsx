@@ -15,73 +15,36 @@ export default function Dashboard() {
 
   if (!user) {
     return (
-      <div className="dashboard-container">
-        <div className="welcome-card">
-          <h2>Loading user data...</h2>
-        </div>
+      <div className="dashboard-loading">
+        <h2>Loading user data...</h2>
       </div>
     );
   }
 
   return (
-    <div className="dashboard-container">
-      <div className="welcome-card">
-        <h1>Welcome to MythForge</h1>
-        <h2>Hello, {user.username}!</h2>
-        <p><strong>Email:</strong> {user.email}</p>
-        <p><strong>Role:</strong> {user.role}</p>
+    <div className="dashboard-fullscreen">
+      {/* === Top Navbar === */}
+      <nav className="dashboard-navbar">
+        <h1 className="navbar-title">Welcome to MythForge</h1>
+        <button className="btn logout" onClick={handleLogout}> Logout</button>
+      </nav>
 
-        {user.role === "user" && (
-          <div className="role-panel user">
-            <h3>🧙‍♂️ User Dashboard</h3>
-            <p>Create, explore, and share your mythic journey.</p>
-            <div className="dashboard-buttons">
-              <button className="btn create" onClick={() => navigate("/create")}>
-                ✍️ Create Myth Narrative
-              </button>
-              <button className="btn view" onClick={() => navigate("/myths")}>
-                📜 View My Myths
-              </button>
-              <button className="btn share" onClick={() => navigate("/share")}>
-                🌠 Share Your Myth
-              </button>
-              <button className="btn logout" onClick={handleLogout}>
-                🚪 Logout
-              </button>
-            </div>
-          </div>
-        )}
+      {/* === Main Content === */}
+      <div className="dashboard-main">
+        <h2 className="user-greeting">Hello, {user.username}!</h2>
+        <p className="user-info"><strong>Email:</strong> {user.email}</p>
 
-        {user.role === "admin" && (
-          <div className="role-panel admin">
-            <h3>👑 Admin Control Panel</h3>
-            <p>Manage users, myths, and global platform policies.</p>
-            <div className="dashboard-buttons">
-              <button className="btn manage-users" onClick={() => navigate("/admin/users")}>
-                🧩 Manage Users (IAM)
-              </button>
-              <button className="btn manage-myths" onClick={() => navigate("/admin/myths")}>
-                ⚡ Manage Myths
-              </button>
-              <button className="btn analytics" onClick={() => navigate("/admin/analytics")}>
-                📊 Platform Analytics
-              </button>
-              <button className="btn logout" onClick={handleLogout}>
-                🚪 Logout
-              </button>
-            </div>
-          </div>
-        )}
-
-        {user.role === "guest" && (
-          <div className="role-panel guest">
-            <h3>👤 Guest Mode</h3>
-            <p>You are browsing in guest mode. Please register or log in to unlock full MythForge functionality.</p>
-            <button className="btn create" onClick={() => navigate("/auth")}>
-              🔑 Log In / Register
-            </button>
-          </div>
-        )}
+        <div className="main-buttons">
+          <button className="btn create" onClick={() => navigate("/create")}>
+            ✍️ Create Myth Narrative
+          </button>
+          <button className="btn view" onClick={() => navigate("/myths")}>
+            📜 View My Myths
+          </button>
+          <button className="btn share" onClick={() => navigate("/share")}>
+            🌠 Share Your Myth
+          </button>
+        </div>
       </div>
     </div>
   );

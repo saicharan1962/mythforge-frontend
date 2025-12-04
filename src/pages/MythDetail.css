@@ -1,120 +1,197 @@
-/* MythDetail.css*/
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Cinzel:wght@400;600&display=swap');
 
-/* ---------- Main Container ---------- */
-.myth-detail-container {
-  min-height:90%;
-  min-width: 90%;
-  padding: 2rem;
-  background: radial-gradient(circle at center, #14121b 0%, #0a0912 100%);
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* ---------- Theme Selector ---------- */
-.theme-selector {
+/* === Main Full Screen Layout === */
+.myth-fullscreen {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(180deg, #2c2943 0%, #3a3356 35%, #201b33 100%);
+  font-family: "Cinzel", serif;
+  color: #fdf8e6;
+  overflow: hidden;
 }
 
-.theme-selector button {
-  padding: 0.5rem 1.2rem;
-  border-radius: 20px;
-  background: #2a2535;
-  border: 1px solid #555;
-  color: #ddd;
-  font-family: 'Cinzel', serif;
+/* === Navbar (consistent with Dashboard) === */
+.dashboard-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 48px;
+  background: linear-gradient(90deg, rgba(45, 35, 70, 0.95), rgba(60, 50, 85, 0.9));
+  border-bottom: 2px solid #ffd700;
+  box-shadow: 0 3px 25px rgba(255, 215, 0, 0.15);
+}
+
+.navbar-title {
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #ffd700, #fff2a8, #ffd700);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowMove 6s linear infinite;
+  text-shadow: 0 0 15px rgba(255, 240, 150, 0.4);
+}
+
+.dashboard-navbar .btn.logout {
+  background: linear-gradient(145deg, #a62121, #6e1010);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-weight: 600;
+  border: 2px solid #ffb6b6;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
 }
 
-.theme-selector button:hover {
-  transform: scale(1.06);
+.dashboard-navbar .btn.logout:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(255, 0, 0, 0.5);
 }
 
-.theme-selector .active {
-  background: #ffd700;
-  color: #000;
+/* === Horizontal Container === */
+.myth-center {
+  flex: 1;
+  display: flex;
+  flex-direction: row;           /* horizontal */
+  justify-content: center;       /* horizontal centering */
+  align-items: center;           /* vertical centering */
+  gap: 3rem;                     /* space between parchment and button */
+  padding: 50px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
 }
 
-/* ---------- Parchment Card ---------- */ .parchment-card { 
- 
-  height:100%;  
-  width :760px;
-  
- /* padding: 5rem; */
+/* === Parchment Card === */
+.parchment-card {
+  flex: 0 1 700px;
+  height: 85%;
+  background: var(--parchment-image) no-repeat center/cover;
+  border-radius: 16px;
+  padding: 2.8rem;
+  box-shadow: 0 0 45px rgba(255, 215, 0, 0.4);
+  background-color: #fffaf0;
+  text-align: justify;
+  line-height: 1.8rem;
+  border: 2px solid #ffd700;
+  color: #3a2d15;
+  overflow-y: auto;
+  animation: fadeInCard 0.8s ease forwards;
+}
 
-  background-size: cover;
-  background-repeat: no-repeat; 
-  background-position: center; 
-  border-radius: 12px; 
-  box-shadow: 0 0 40px rgba(6, 6, 6, 0.6); }
-
-
-
-
-
-/* ---------- Title ---------- */
+/* === Title / Date / Text === */
 .parchment-title {
   text-align: center;
-  font-size: 2.5rem;
-  font-family: 'Cinzel', serif;
+  font-size: 2rem;
   color: #6a4a00;
-  margin-bottom: 0.6rem;
+  text-shadow: 0 0 10px rgba(255, 208, 102, 0.8);
+  margin-bottom: 0.5rem;
 }
 
-/* ---------- Date ---------- */
 .myth-date {
   text-align: center;
-  opacity: 0.7;
-  margin-bottom: 1.5rem;
-  font-family: 'Cinzel', serif;
-  color:black;
+  color: #5e4a00;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin-bottom: 1.2rem;
 }
 
-/* ---------- Narrative Text ---------- */
 .parchment-content {
   font-family: 'Pacifico', cursive;
-  font-size: 1.35rem;
-  line-height: 2.2rem;
-  white-space: pre-line;
+  font-size: 1.2rem;
   color: #3b2a1a;
+  white-space: pre-line;
 }
 
-/* ---------- Theme Glow Effects ---------- */
-.parchment-card.epic {
-  box-shadow: 0 0 30px #ffd700aa;
-}
+/* === Theme Glow Variants === */
+.parchment-card.epic { box-shadow: 0 0 45px #ffd700cc; }
+.parchment-card.dark { box-shadow: 0 0 40px #8b0000cc; }
+.parchment-card.soft { box-shadow: 0 0 40px #ff8abecc; }
+.parchment-card.divine { box-shadow: 0 0 50px #ffffffcc; }
 
-.parchment-card.dark {
-  box-shadow: 0 0 35px #7a0000aa;
-}
-
-.parchment-card.soft {
-  box-shadow: 0 0 35px #ff8abbaa;
-}
-
-.parchment-card.divine {
-  box-shadow: 0 0 45px #ffffffcc;
-}
-
-/* ---------- Buttons ---------- */
+/* === Button Section (beside card horizontally) === */
 .button-row {
-  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .scroll-btn {
-  padding: 0.8rem 1.8rem;
+  padding: 1rem 2.2rem;
   border-radius: 12px;
-  background: #ffd700;
+  background: linear-gradient(135deg, #ffd700, #ffb400);
   color: #000;
+  font-weight: 600;
   border: none;
   cursor: pointer;
   font-family: 'Cinzel', serif;
+  transition: all 0.3s ease;
 }
 
 .scroll-btn:hover {
-  background: #ffe55e;
+  background: linear-gradient(135deg, #ffe673, #ffbf00);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+/* === Loading State === */
+.myth-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #2c2943 0%, #3a3356 35%, #201b33 100%);
+  color: #ffd700;
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+}
+
+/* === Animations === */
+@keyframes glowMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* === Responsive: stack vertically on smaller screens === */
+@media (max-width: 900px) {
+  .myth-center {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 30px 20px;
+  }
+
+  .parchment-card {
+    height: auto;
+    width: 90%;
+  }
+
+  .scroll-btn {
+    width: 80%;
+  }
+
+  .navbar-title {
+    font-size: 1.4rem;
+  }
+
+  .parchment-content {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+  }
 }
