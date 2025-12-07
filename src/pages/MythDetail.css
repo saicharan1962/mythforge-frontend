@@ -195,3 +195,13 @@
     line-height: 1.8rem;
   }
 }
+
+/* Applied ONLY during screenshot */
+.download-capture * {
+  color: white !important;   /* dark brown text */
+  opacity: 1 !important;
+  text-shadow: none !important;
+  font-weight: bold;
+  font: Arial;
+}
+

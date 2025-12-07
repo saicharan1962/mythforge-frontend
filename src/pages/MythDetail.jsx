@@ -6,7 +6,6 @@ import html2canvas from "html2canvas";
 import "./MythDetail.css";
 import parchment from "../assets/parchment.png";
 
-
 export default function MythDetail() {
   const { id } = useParams();
   const [myth, setMyth] = useState(null);
@@ -30,14 +29,27 @@ export default function MythDetail() {
     fetchMyth();
   }, [id, navigate]);
 
+  // ⭐⭐⭐ FIXED DOWNLOAD FUNCTION (High-contrast temporary mode)
   const downloadScroll = async () => {
     const card = document.getElementById("myth-card");
 
+    // 1️⃣ Add temporary high-contrast visibility class
+    card.classList.add("download-capture");
+
+    // Give browser a moment to apply new CSS
+    await new Promise((r) => setTimeout(r, 50));
+
+    // 2️⃣ Generate screenshot
     const canvas = await html2canvas(card, {
       scale: 2,
       useCORS: true,
+      backgroundColor: null,
     });
 
+    // 3️⃣ Remove temporary class
+    card.classList.remove("download-capture");
+
+    // 4️⃣ Download
     const link = document.createElement("a");
     link.download = `${myth.title}_myth.png`;
     link.href = canvas.toDataURL("image/png");
@@ -49,18 +61,17 @@ export default function MythDetail() {
 
   return (
     <div className="myth-detail-container">
-
-     
-
       {/* Parchment Card */}
       <div
-  id="myth-card"
-  className={`parchment-card ${theme}`}
-  style={{ "--parchment-image": `url(${parchment})` }}
->
+        id="myth-card"
+        className={`parchment-card ${theme}`}
+        style={{ "--parchment-image": `url(${parchment})` }}
+      >
         <h1 className="parchment-title">{myth.title}</h1>
 
-        <p className="myth-date">🕰️ {new Date(myth.created_at).toLocaleString()}</p>
+        <p className="myth-date">
+          🕰️ {new Date(myth.created_at).toLocaleString()}
+        </p>
 
         <div className="parchment-content">
           {myth.narrative.replace(/^"|"$/g, "")}
