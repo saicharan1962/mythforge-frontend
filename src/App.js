@@ -1,6 +1,4 @@
-/* ==== app.js ==== */
-
-
+// src/App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
@@ -13,7 +11,7 @@ import Myths from "./pages/Myths";
 import Chronicles from "./pages/Chronicles";
 import AdminDashboard from "./pages/AdminDashboard";
 import Verify from "./pages/Verify";
-
+import MythDetail from "./pages/MythDetail"; // ✅ new import
 
 import "./App.css";
 
@@ -31,6 +29,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/create" element={<CreateMyth />} />
           <Route path="/myths" element={<Myths />} />
+          <Route path="/myth/:id" element={<MythDetail />} /> {/* ✅ new route */}
         </Routes>
       </AuthProvider>
     </Router>
