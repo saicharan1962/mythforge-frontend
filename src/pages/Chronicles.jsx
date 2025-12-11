@@ -1,7 +1,7 @@
 import "./Chronicles.css";
 import { useEffect } from "react";
 
-// --- Import all 19 deity images (Hercules removed because unused) ---
+// Used images
 import Zeus from "../assets/gods/Zeus.png";
 import Hera from "../assets/gods/Hera.png";
 import Demeter from "../assets/gods/Demeter.png";
@@ -10,18 +10,20 @@ import Apollo from "../assets/gods/Apollo.png";
 import Artemis from "../assets/gods/Artemis.png";
 import Ares from "../assets/gods/Ares.png";
 import Aphrodite from "../assets/gods/Aphrodite.png";
-import Hephaestus from "../assets/gods/Hephaestus.png";
 import Hermes from "../assets/gods/Hermes.png";
 import Hades from "../assets/gods/Hades.png";
 import Persephone from "../assets/gods/Persephone.png";
-// import Hercules from "../assets/gods/Hercules.png";  ❌ REMOVED
-import Perseus from "../assets/gods/Perseus.png";
-import Odysseus from "../assets/gods/Odysseus.png";
-import Atalanta from "../assets/gods/Atalanta.png";
-import Orpheus from "../assets/gods/Orpheus.png";
-import Psyche from "../assets/gods/Psyche.png";
 import Hecate from "../assets/gods/Hecate.png";
 import TheFates from "../assets/gods/TheFates.png";
+
+// REMOVE THESE (unused)
+// import Hephaestus from "../assets/gods/Hephaestus.png";
+// import Perseus from "../assets/gods/Perseus.png";
+// import Odysseus from "../assets/gods/Odysseus.png";
+// import Atalanta from "../assets/gods/Atalanta.png";
+// import Orpheus from "../assets/gods/Orpheus.png";
+// import Psyche from "../assets/gods/Psyche.png";
+
 
 function Chronicles() {
   useEffect(() => {
