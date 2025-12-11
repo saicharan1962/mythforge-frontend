@@ -31,7 +31,5 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "/"
-          output_location: "build"
-
-
-
+          api_location: ""         # no backend API for static web app
+          output_location: "build" # build folder for React
